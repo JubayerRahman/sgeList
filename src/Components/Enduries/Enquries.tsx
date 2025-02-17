@@ -53,8 +53,8 @@ function Enquries() {
                             <br />
                             Message: {list.message}
                             <br />
-                            <button onClick={()=>ReadFnction(list._id)} title='mark as read' className={ list.markAsRead?"hidden":'bg-black text-xl p-[10px] rounded-md mt-[10px] text-white cursor-pointer flex items-center gap-1'}> <FaCheckCircle/>  Mark as Read</button>
-                            <button onClick={()=>UnReadFnction(list._id)} title='mark as read' className={ list.markAsRead== false?"hidden":'bg-black text-xl p-[10px] rounded-md mt-[10px] text-white cursor-pointer flex items-center gap-1'}><IoMdCloseCircle/>Mark as Unread</button>
+                            <button onClick={()=>ReadFnction(list._id)} title='mark as read' className={ list.markAsRead?"hidden":'bg-black text-md p-[10px] rounded-md mt-[10px] text-white cursor-pointer flex items-center gap-1'}> <FaCheckCircle/>  Mark as Read</button>
+                            <button onClick={()=>UnReadFnction(list._id)} title='mark as read' className={ list.markAsRead== false?"hidden":'bg-black text-md p-[10px] rounded-md mt-[10px] text-white cursor-pointer flex items-center gap-1'}><IoMdCloseCircle/>Mark as Unread</button>
                         </li>
                     )
                     }
