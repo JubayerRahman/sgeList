@@ -7,13 +7,16 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Apply from './Components/Apply/Apply.tsx'
 import Enquries from './Components/Enduries/Enquries.tsx'
 import StudentRegistration from './Components/StudentRegistration/StudentRegistration.tsx'
+import Login from './Components/Login/Login.tsx'
+import ConstProvider from './Context/Context.tsx'
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute.tsx'
 
 const queryClient = new QueryClient()
 
 const root = createBrowserRouter([
   {
     path: "/",
-    element:<App/>,
+    element:<PrivateRoute><App/></PrivateRoute>,
     children:[
       
   {
@@ -30,13 +33,19 @@ const root = createBrowserRouter([
   },
     ]
   },
+  {
+    path:"/login",
+    element:<Login/>
+  }
 
 ])
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+  <ConstProvider>
     <QueryClientProvider client={queryClient}>
         <RouterProvider router={root}/>
     </QueryClientProvider>
+  </ConstProvider>
   </StrictMode>,
 )
