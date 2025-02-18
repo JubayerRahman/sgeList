@@ -22,11 +22,9 @@ function Login() {
         if (mail === verifymail && pass === verifypass) {
             setUser(true)
             navigate(location.state)
-            alert("Working")
         }
         else{
-            alert("not Working")
-            console.log(verifymail, verifypass);
+            alert("Try again")
             
 
         }
